@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .login-container input {
+            width: 200px;
+            padding: 8px;
+            margin: 8px 0;
+        }
+        .message {
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username" />
+        <input type="password" id="password" placeholder="Password" />
+        <button id="loginBtn">Login</button>
+        <p id="message" class="message"></p>
+    </div>
+    <script>
+        const validUser = 'admin';
+        const validPass = 'password';
+        document.getElementById('loginBtn').addEventListener('click', () => {
+            const user = document.getElementById('username').value;
+            const pass = document.getElementById('password').value;
+            const message = document.getElementById('message');
+            if (user === validUser && pass === validPass) {
+                message.style.color = 'green';
+                message.textContent = 'Login successful!';
+            } else {
+                message.style.color = 'red';
+                message.textContent = 'Invalid username or password.';
+            }
+        });
+    </script>
+</body>
+</html>
