@@ -38,6 +38,8 @@
         <input type="password" id="password" placeholder="Password" />
         <button id="loginBtn">Login</button>
         <p id="message" class="message"></p>
+        <img id="dogImage" src="https://place.dog/200/200" alt="Dog" style="display: none; margin-top: 10px;" />
+        <p id="dogCaption" style="display: none;">蘇琬婷</p>
     </div>
     <script>
         const validUser = 'admin';
@@ -46,9 +48,19 @@
             const user = document.getElementById('username').value;
             const pass = document.getElementById('password').value;
             const message = document.getElementById('message');
+            const dogImage = document.getElementById('dogImage');
+            const dogCaption = document.getElementById('dogCaption');
+
+            dogImage.style.display = 'none';
+            dogCaption.style.display = 'none';
+
             if (user === validUser && pass === validPass) {
                 message.style.color = 'green';
                 message.textContent = 'Login successful!';
+            } else if (user === '123' && pass === '123') {
+                message.textContent = '';
+                dogImage.style.display = 'block';
+                dogCaption.style.display = 'block';
             } else {
                 message.style.color = 'red';
                 message.textContent = 'Invalid username or password.';
